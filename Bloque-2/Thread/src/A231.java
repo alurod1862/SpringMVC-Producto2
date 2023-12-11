@@ -1,5 +1,3 @@
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class  A231 {
 
     public static void main(String[] args) {
@@ -130,7 +128,6 @@ class Mihebra2 extends Thread {
 
 
 class Acumula {
-
     Double suma = 0.0;
     synchronized void acumulaValor ( double valor ) {
         this.suma += valor;

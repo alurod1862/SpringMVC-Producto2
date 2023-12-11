@@ -152,7 +152,6 @@ class MiHebraCiclica3 extends Thread {
 
     }
 
-
 }
 
 class MiHebraBloques3 extends Thread {
