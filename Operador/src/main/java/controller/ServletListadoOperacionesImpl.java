@@ -30,10 +30,7 @@ public class ServletListadoOperacionesImpl extends HttpServlet {
         out.println("<li>Multiplicación</li>");
         out.println("<li>División</li>");
         out.println("</ul>");
-        out.println("Volver a inicio");
-
-
-
+        out.println("<a href='index.html'>Volver</a>");
 
 
     }

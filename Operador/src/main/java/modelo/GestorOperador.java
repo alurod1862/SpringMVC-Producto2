@@ -74,20 +74,30 @@ public class GestorOperador {
     }
 
 
-    //public String calculaRdo(String oper, String op1, String op2) {
+    public String calculaRdo(String oper, String op1, String op2) {
 
-    //char cad;
-    //cad = oper.charAt(0);
-    //Double ope1 = 0.0;
-
-    //Los comentarios que te pongo a continuación son para realizar las operaciones dentro del switch
-    // Para Convertir un String a Double puedes usar Double.parseDouble(op1) , por ejemplo
-    // Para convertir de Double a String puedes usar Double.toString(ope1) , por ejemplo
+    char cad;
+    cad = oper.charAt(0);
+    Double ope1 = 0.0;
 
 
+    switch (oper){
+        case "+":
+            ope1 = Double.valueOf(op1)+Double.valueOf(op2);
+            break;
+        case "-":
+            ope1 = Double.valueOf(op1)-Double.valueOf(op2);
+            break;
+        case "/":
+            ope1 = Double.valueOf(op1)/Double.valueOf(op2);
+            break;
+        case "*":
+            ope1 = Double.valueOf(op1)*Double.valueOf(op2);
+            break;
+    }
 
-    //return rdo;
-    //}
+    return ope1.toString();
+    }
 
     //public String MostrarOperacion (String oper) {
     //}
