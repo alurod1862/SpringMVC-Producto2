@@ -9,7 +9,6 @@ import java.util.Objects;
 
 @Entity
 @jakarta.persistence.Table(name = "contiene", schema = "mydb", catalog = "")
-@jakarta.persistence.IdClass(com.example.springmvcproducto2.models.entity.ContieneEntityPK.class)
 public class ContieneEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
