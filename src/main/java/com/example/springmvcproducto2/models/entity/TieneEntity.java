@@ -1,41 +1,24 @@
 package com.example.springmvcproducto2.models.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Objects;
 
 @Entity
-@jakarta.persistence.Table(name = "tiene", schema = "mydb", catalog = "")
-@jakarta.persistence.IdClass(com.example.springmvcproducto2.models.entity.TieneEntityPK.class)
+@jakarta.persistence.Table(name = "tiene", schema = "mydb")
 public class TieneEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+
     @Id
-    @jakarta.persistence.Column(name = "menu_id", nullable = false)
-    private int menuId;
+    @OneToOne
+    private MenuEntity menuId;
 
-    public int getMenuId() {
-        return menuId;
-    }
 
-    public void setMenuId(int menuId) {
-        this.menuId = menuId;
-    }
-
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "usuario_id", nullable = false)
-    private int usuarioId;
+    @OneToOne(mappedBy = "")
+    private UsuarioEntity usuarioId;
 
-    public int getUsuarioId() {
-        return usuarioId;
-    }
 
-    public void setUsuarioId(int usuarioId) {
-        this.usuarioId = usuarioId;
-    }
 
     @Override
     public boolean equals(Object o) {

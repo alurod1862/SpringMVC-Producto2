@@ -5,8 +5,7 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@jakarta.persistence.Table(name = "pedido", schema = "mydb", catalog = "")
-@IdClass(com.example.springmvcproducto2.models.entity.PedidoEntityPK.class)
+@jakarta.persistence.Table(name = "pedido", schema = "mydb")
 public class PedidoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -21,7 +20,6 @@ public class PedidoEntity {
         this.id = id;
     }
 
-    @Basic
     @Column(name = "direccion", nullable = false, length = 45)
     private String direccion;
 
@@ -33,7 +31,6 @@ public class PedidoEntity {
         this.direccion = direccion;
     }
 
-    @Basic
     @Column(name = "npedido", nullable = false, length = 45)
     private String npedido;
 
@@ -45,16 +42,16 @@ public class PedidoEntity {
         this.npedido = npedido;
     }
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    @Column(name = "usuario_id", nullable = false)
-    private int usuarioId;
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private UsuarioEntity usuarioId;
 
-    public int getUsuarioId() {
+
+    public UsuarioEntity getUsuarioId() {
         return usuarioId;
     }
 
-    public void setUsuarioId(int usuarioId) {
+    public void setUsuarioId(UsuarioEntity usuarioId) {
         this.usuarioId = usuarioId;
     }
 

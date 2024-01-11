@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@jakarta.persistence.Table(name = "menu", schema = "mydb", catalog = "")
+@jakarta.persistence.Table(name = "menu", schema = "mydb")
 public class MenuEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
