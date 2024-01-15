@@ -1,12 +1,13 @@
 package com.example.springmvcproducto2.models.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@jakarta.persistence.Table(name = "tiene", schema = "mydb")
-public class TieneEntity {
+@javax.persistence.Table(name = "tiene", schema = "mydb")
+public class TieneEntity implements Serializable {
 
 
     @Id
