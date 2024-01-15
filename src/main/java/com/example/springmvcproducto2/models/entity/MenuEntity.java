@@ -1,15 +1,16 @@
 package com.example.springmvcproducto2.models.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+
 
 import java.util.Objects;
 
 @Entity
-@jakarta.persistence.Table(name = "menu", schema = "mydb")
+@javax.persistence.Table(name = "menu", schema = "mydb")
 public class MenuEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "id", nullable = false)
+    @javax.persistence.Column(name = "id", nullable = false)
     private int id;
 
     public int getId() {
@@ -56,4 +57,10 @@ public class MenuEntity {
     public int hashCode() {
         return Objects.hash(id, nombre, precio);
     }
+
+
+
 }
+
+
+

@@ -1,6 +1,6 @@
 package com.example.springmvcproducto2.models.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.util.List;
 import java.util.Objects;

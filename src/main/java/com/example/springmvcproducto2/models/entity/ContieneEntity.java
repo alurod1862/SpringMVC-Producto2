@@ -1,18 +1,19 @@
 package com.example.springmvcproducto2.models.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@jakarta.persistence.Table(name = "contiene", schema = "mydb", catalog = "")
-public class ContieneEntity {
+@javax.persistence.Table(name = "contiene", schema = "mydb", catalog = "")
+public class ContieneEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "menu_id", nullable = false)
+    @javax.persistence.Column(name = "menu_id", nullable = false)
     private int menuId;
 
     public int getMenuId() {
@@ -25,7 +26,7 @@ public class ContieneEntity {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @jakarta.persistence.Column(name = "producto_id", nullable = false)
+    @javax.persistence.Column(name = "producto_id", nullable = false)
     private int productoId;
 
     public int getProductoId() {
