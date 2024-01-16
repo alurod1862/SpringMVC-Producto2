@@ -56,16 +56,4 @@ public class PedidoEntity {
         this.usuarioId = usuarioId;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        PedidoEntity that = (PedidoEntity) o;
-        return id == that.id && usuarioId == that.usuarioId && Objects.equals(direccion, that.direccion) && Objects.equals(npedido, that.npedido);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, direccion, npedido, usuarioId);
-    }
-}
+   }

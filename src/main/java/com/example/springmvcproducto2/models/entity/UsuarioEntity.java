@@ -63,21 +63,4 @@ public class UsuarioEntity {
     }
 
 
-
-    @OneToMany
-    @JoinColumn(name = "id")
-    private List<UsuarioEntity> usuarioId;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        UsuarioEntity that = (UsuarioEntity) o;
-        return id == that.id && Objects.equals(nombre, that.nombre) && Objects.equals(apellidos, that.apellidos) && Objects.equals(email, that.email) && Objects.equals(telefono, that.telefono);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, nombre, apellidos, email, telefono);
-    }
 }

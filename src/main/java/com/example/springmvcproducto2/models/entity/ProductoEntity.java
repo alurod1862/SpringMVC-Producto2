@@ -56,16 +56,4 @@ public class ProductoEntity {
         this.descripcion = descripcion;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ProductoEntity that = (ProductoEntity) o;
-        return id == that.id && kcal == that.kcal && Objects.equals(nombre, that.nombre) && Objects.equals(descripcion, that.descripcion);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, nombre, kcal, descripcion);
-    }
-}
+   }

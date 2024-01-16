@@ -8,10 +8,20 @@ import java.util.Objects;
 @Entity
 @javax.persistence.Table(name = "menu", schema = "mydb")
 public class MenuEntity {
+
+    public MenuEntity(String name, double precio) {
+        this.setNombre(name);
+        this.setPrecio(precio);
+    }
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @javax.persistence.Column(name = "id", nullable = false)
     private int id;
+
+    public MenuEntity() {
+
+    }
 
     public int getId() {
         return id;
@@ -34,33 +44,18 @@ public class MenuEntity {
     }
 
     @Basic
-    @Column(name = "precio", nullable = true, length = 45)
-    private String precio;
+    @Column(name = "precio", nullable = true)
+    private double precio;
 
-    public String getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        MenuEntity that = (MenuEntity) o;
-        return id == that.id && Objects.equals(nombre, that.nombre) && Objects.equals(precio, that.precio);
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, nombre, precio);
-    }
-
-
-
-}
 
 
 

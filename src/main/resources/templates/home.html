@@ -1,12 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" th:href="@{/css/try.css}">
+    <link rel="stylesheet" th:href="@{/css/home.css}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link th:href = "@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href = "@{/css/custom.css}" rel="stylesheet">
 </head>
 <body>
 <header th:replace="~{fragments/header}"></header>
+
+<div layout:fragment="content">
+    <div class="container my-4">
+        <div class="table-responsive">
+            <table class="table table-striped align-middle table--with-actions">
+                <thead class="table-borderless">
+                <tr>
+                    <th class="td-id" scope="col">Id</th>
+                    <th class="td-name" scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th class="td-actions" scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="menu : ${menus}">
+                    <th scope="row" th:text="${menu.id}"></th>
+                    <td th:text="${menu.nombre}"></td>
+                    <td th:text="${menu.precio}" class="w-25"></td>
+                    <td class="td-actions">
+                        <div class="td-actions__wrapper">
+                            <a th:href="@{'/menu/' + ${menu.id}}" role="button" class="btn btn-primary">
+                                <i class="bi bi-pencil"></i>
+                                <span>Editar</span>
+                            </a>
+                            <button type="button" class="btn btn-danger"
+                                    data-bs-toggle="modal"
+                                    th:data-name="${menu.nombre}"
+                                    th:data-id="${menu.id}"
+                                    data-bs-target="#deleteMenuModal"
+                                    data-type="deleteButton">
+                                <i class="bi bi-trash3"></i>
+                                <span>Borrar</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 </body>
 </html>
