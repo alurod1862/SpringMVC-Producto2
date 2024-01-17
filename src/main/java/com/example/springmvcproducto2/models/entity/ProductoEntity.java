@@ -45,6 +45,26 @@ public class ProductoEntity {
     }
 
     @Basic
+    @Column(name = "precio", nullable = false)
+    private Double precio;
+
+    public Double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Double precio) {
+        this.precio = precio;
+    }
+
+    public ProductoEntity() {
+    }
+
+    public ProductoEntity(String nombre, Double precio) {
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+
+    @Basic
     @Column(name = "descripcion", nullable = true, length = 45)
     private String descripcion;
 

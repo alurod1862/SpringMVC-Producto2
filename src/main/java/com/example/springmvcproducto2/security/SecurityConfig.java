@@ -25,25 +25,25 @@ public class SecurityConfig {
 
     @Bean
     public InMemoryUserDetailsManager userDetailsManager() {
-        UserDetails admin = User.builder()
+        UserDetails admin1 = User.builder()
                 .username("isaac")
                 .password("{noop}hola01")
                 .roles("EMPLOYEE", "MANAGER", "ADMIN")
                 .build();
 
-        return new InMemoryUserDetailsManager(admin);
+        return new InMemoryUserDetailsManager(admin1, admin);
     }
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests(configurer ->
                         configurer
-                                .antMatchers("/css/**", "/js/**", "/images/**").permitAll() // Permitir acceso a recursos estáticos
+                                .antMatchers("/css/**", "/js/**", "/images/**","/menus").permitAll() // Permitir acceso a recursos estáticos
                                 .anyRequest().authenticated()
                 )
                 .formLogin(form ->
                         form
-                                .loginPage("/")
+                                .loginPage("/showMyLoginPage")
                                 .loginProcessingUrl("/authenticateTheUser")
                                 .permitAll()
                 )
@@ -51,21 +51,6 @@ public class SecurityConfig {
 
         return http.build();
     }
+
 }
-
-/*
-
-@Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/", "/auth/**","/css/**",
-                        "/js/**","/images/**").permitAll().anyRequest().authenticated()
-                .and()
-                .formLogin().loginPage("/auth/login").defaultSuccessUrl("/",
-                        true).failureUrl("/auth/login?error=true")
-                .loginProcessingUrl("/auth/login-post").permitAll()
-                .and()
-                .logout().logoutUrl("/logout").logoutSuccessUrl("/");
-    }
- */
 
