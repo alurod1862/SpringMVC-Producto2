@@ -30,6 +30,11 @@ public class SecurityConfig {
                 .password("{noop}hola01")
                 .roles("EMPLOYEE", "MANAGER", "ADMIN")
                 .build();
+        UserDetails admin = User.builder()
+                .username("iker")
+                .password("{noop}hola01")
+                .roles("EMPLOYEE", "MANAGER", "ADMIN")
+                .build();
 
         return new InMemoryUserDetailsManager(admin1, admin);
     }
