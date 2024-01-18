@@ -1,12 +1,10 @@
 package com.example.springmvcproducto2.models.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
-
-import java.util.Objects;
 
 @Entity
-@javax.persistence.Table(name = "menu", schema = "mydb")
+@Table(name = "menu", schema = "mydb")
 public class MenuEntity {
 
     public MenuEntity(String name, double precio) {
@@ -16,7 +14,7 @@ public class MenuEntity {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @javax.persistence.Column(name = "id", nullable = false)
+    @Column(name = "id", nullable = false)
     private int id;
 
     public MenuEntity() {
@@ -55,7 +53,7 @@ public class MenuEntity {
         this.precio = precio;
     }
 
-    }
+}
 
 
 

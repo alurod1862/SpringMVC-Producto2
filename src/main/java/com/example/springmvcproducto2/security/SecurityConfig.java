@@ -43,7 +43,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests(configurer ->
                         configurer
-                                .antMatchers("/css/**", "/js/**", "/images/**","/menus").permitAll() // Permitir acceso a recursos estáticos
+                                .requestMatchers("/css/**", "/js/**", "/images/**","/menus").permitAll() // Permitir acceso a recursos estáticos
                                 .anyRequest().authenticated()
                 )
                 .formLogin(form ->

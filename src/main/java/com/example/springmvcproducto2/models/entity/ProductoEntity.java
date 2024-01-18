@@ -1,15 +1,14 @@
 package com.example.springmvcproducto2.models.entity;
 
 
-import javax.persistence.*;
-import java.util.Objects;
+import jakarta.persistence.*;
 
 @Entity
-@javax.persistence.Table(name = "producto", schema = "mydb", catalog = "")
+@Table(name = "producto", schema = "mydb", catalog = "")
 public class ProductoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @javax.persistence.Column(name = "id", nullable = false)
+    @Column(name = "id", nullable = false)
     private int id;
 
     public int getId() {

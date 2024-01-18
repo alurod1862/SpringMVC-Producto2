@@ -1,9 +1,7 @@
 package com.example.springmvcproducto2.models.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
-import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Table(name = "usuario", schema = "mydb")
